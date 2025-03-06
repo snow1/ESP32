@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ESP32 Car Control</title>
+    <script>
+        function sendCommand(command) {
+            fetch("http://YOUR_ESP32_IP/" + command)
+                .then(response => console.log("Command sent:", command))
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
+</head>
+<body>
+    <h2>ESP32 Car Control</h2>
+    <button onclick="sendCommand('FORWARD')">Forward</button>
+    <button onclick="sendCommand('LEFT')">Left</button>
+    <button onclick="sendCommand('RIGHT')">Right</button>
+    <button onclick="sendCommand('BACKWARD')">Backward</button>
+    <button onclick="sendCommand('STOP')">Stop</button>
+</body>
+</html>
